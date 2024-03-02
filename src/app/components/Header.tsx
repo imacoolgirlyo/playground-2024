@@ -1,3 +1,4 @@
+"use client";
 import { getMenusByLoginState, state } from "../uiBuilder";
 
 export default function Header() {
@@ -10,7 +11,7 @@ export default function Header() {
           id="menu-btn"
           key={menu.label}
           style={{ padding: "10px", cursor: "pointer" }}
-          // onClick={() => console.log(`go to ${menu.path}`)}
+          onClick={() => console.log(`go to ${menu.path}`)}
         >
           {menu.label}
         </div>
