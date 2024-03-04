@@ -1,8 +1,10 @@
 "use client";
 import { getMenusByLoginState, state } from "../uiBuilder";
+import { getMenuList } from "../utils/menuFactory";
 
 export default function Header() {
-  const menuList = getMenusByLoginState(state);
+  // const menuList = getMenusByLoginState(state);
+  const menuList = getMenuList(state);
 
   return (
     <div style={{ display: "flex" }}>

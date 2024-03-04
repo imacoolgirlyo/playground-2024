@@ -3,7 +3,7 @@ import { ILoginState } from "./interface";
 export const state = {
   isLogin: true,
   isUserIdStored: true,
-  company: "HI",
+  company: "LOTTE",
   userId: "test",
   branchName: "test",
   branchCode: "test",
