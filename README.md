@@ -1,36 +1,22 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## 🏊‍♀️ Playground
 
-## Getting Started
+### flex CSS
 
-First, run the development server:
+url: /flex
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. contents의 height가 브라우저의 나머지 영역을 다 차지하도록 만들어보세요. (단, calc는 쓰지 않아야 함)
+2. contents height가 나머지 영역의 절반만 차지하도록 만들어보세요.
+3. contents와 header의 height가 각각 50%씩 차지하도록 만들어보세요.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<details>
+<summary>정답</summary>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. FlexComponent의 부모 element가 전체 브라우저 영역 height가 되도록 설정(부모의 높이를 100vh), Content에 `flex-grow: 1`
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+2. Content에 `flex-grow: 0.5`
 
-## Learn More
+3. Content, Header에 모두 `flex-grow: 1`
 
-To learn more about Next.js, take a look at the following resources:
+부모가 flex container 일 때, flex item들의 기본 사이즈를 더해도 영역이 남는 경우가 있다. 이때 만약 남은 영역을 다 채우게끔 만들어버리고 싶다면? 👉 자식에게 `flex-grow` 먹여서 얼만큼 남은 영역들을 차지하게끔 할것인지 설정
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+</details>
