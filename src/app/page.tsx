@@ -1,15 +1,13 @@
-import Header from "./components/Header";
-import styles from "./page.module.css";
+import HomeComponent from "./components/HomeComponent";
 
 export default async function Home({
   searchParams,
 }: {
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
-  console.log(searchParams);
   return (
-    <main className={styles.main}>
-      <Header isLogin={searchParams?.login === "true"} />
+    <main style={{ border: "1px solid red", height: "100vh" }}>
+      <HomeComponent />
     </main>
   );
 }

@@ -1,10 +1,11 @@
-"use client";
+// "use client";
 import { useState } from "react";
 import { state } from "../uiBuilder";
 import { getMenuList } from "../utils/menuFactory";
 
-export default function Header({ isLogin }: { isLogin: boolean }) {
-  const [loginStatus, setLoginStatus] = useState(isLogin);
+export default async function Header() {
+  const data = getData();
+  const [loginStatus, setLoginStatus] = useState(false);
   const menuList = getMenuList(state);
 
   return (
@@ -24,4 +25,17 @@ export default function Header({ isLogin }: { isLogin: boolean }) {
       </div>
     </div>
   );
+}
+
+async function getData() {
+  const res = await fetch("https://api.github.com/repos/vercel/next.js");
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
+
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
 }
