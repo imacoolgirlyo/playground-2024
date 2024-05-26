@@ -74,7 +74,7 @@ const FileUpload: React.FC = () => {
       편의점: ["씨유", "GS25", "세븐일레븐"],
       카페: ["투썸", "배스킨라빈스", "빽다방"],
       외식: ["우아한형제들", "건대우동집", "금계통닭"],
-      약속: ["주점", "바", "카페"],
+      약속: [],
       쇼핑: ["H&M", "쇼핑몰", "아울렛"],
       미용: ["올리브영", "씨제이올리브네트웍스", "피부"],
       의료: ["의원", "약국", "치과"],
@@ -85,8 +85,10 @@ const FileUpload: React.FC = () => {
     };
 
     for (const [category, keywords] of Object.entries(categories)) {
-      if (keywords.some((keyword) => merchant.includes(keyword))) {
-        return category;
+      for (const keyword of keywords) {
+        if (merchant.includes(keyword)) {
+          return category;
+        }
       }
     }
     return "기타";
