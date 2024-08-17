@@ -1,12 +1,14 @@
 "use client";
+
+import { Global } from "@emotion/react";
+import globalStyles from "@/styles/global";
 import styled from "@emotion/styled";
 import React from "react";
 
 const HomeComponent = () => {
   return (
     <StyledWrapper>
-      <Header>Header</Header>
-      <Content>contents</Content>
+      <Global styles={globalStyles} />
     </StyledWrapper>
   );
 };
