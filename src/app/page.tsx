@@ -5,8 +5,19 @@ export default async function Home({
 }: {
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
+  const data = await fetch("http://localhost:3000/api/hello")
+    .then((res) => {
+      return res.json();
+    })
+    .catch((err) => {
+      console.error(err);
+      return null;
+    });
+
+  console.log(data);
+
   return (
-    <main style={{ border: "1px solid red", height: "100vh" }}>
+    <main style={{ height: "100vh" }}>
       <HomeComponent />
     </main>
   );
